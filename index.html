@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>株式会社Quriosity｜事業開発・サービスデザイン・UX・AI</title>
+<meta name="description" content="株式会社Quriosityは、UXデザインを軸に、新規事業の立ち上げ、サービスデザイン、AIプロダクトの開発までを手がけるデザインコンサルティングファームです。">
+<meta property="og:title" content="株式会社Quriosity">
+<meta property="og:description" content="体験から、事業をつくる。事業開発・サービスデザイン・UX・AIプロダクト。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://quriosity.biz/">
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#16202C;      /* logo eye color, cool */
+  --sub:#5A6675;
+  --line:#D9E0E8;
+  --mist:#EEF2F6;
+  --blue:#0A72C2;     /* brand blue, deepened for contrast */
+  --red:#F23A0C;      /* brand red-orange */
+  --orange:#FF8A00;
+  --white:#FFFFFF;
+  --max:1200px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{font-family:"IBM Plex Sans JP","Hiragino Sans",sans-serif;color:var(--ink);background:var(--white);font-size:16px;line-height:1.9;-webkit-font-smoothing:antialiased;font-feature-settings:"palt"}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+img{display:block;max-width:100%}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 32px}
+@media(max-width:640px){.wrap{padding:0 20px}}
+
+/* header */
+header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line)}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between}
+.nav img{height:24px;width:auto}
+.nav ul{list-style:none;display:flex;align-items:center;gap:32px;font-size:14px;font-weight:500}
+.nav ul a{text-decoration:none}
+.nav ul a:hover{color:var(--blue)}
+.nav .cta{background:var(--ink);color:#fff;padding:10px 20px;border-radius:2px}
+.nav .cta:hover{background:var(--blue);color:#fff}
+@media(max-width:900px){.nav ul li:not(:last-child){display:none}}
+
+/* hero */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero .wrap{position:relative;z-index:2;padding-top:120px;padding-bottom:112px}
+.hero h1{font-size:clamp(38px,6.4vw,84px);line-height:1.22;font-weight:700;letter-spacing:-.01em;max-width:11em}
+.hero .lead{margin-top:36px;font-size:18px;color:var(--sub);max-width:31em}
+.hero .actions{margin-top:44px;display:flex;gap:16px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-weight:700;font-size:15px;padding:16px 30px;border-radius:2px;border:1.5px solid var(--ink)}
+.btn.solid{background:var(--ink);color:#fff}
+.btn.solid:hover{background:var(--blue);border-color:var(--blue)}
+.btn.line:hover{background:var(--ink);color:#fff}
+.hero-q{position:absolute;right:-140px;top:50%;transform:translateY(-50%);width:640px;height:640px;z-index:1;pointer-events:none}
+@media(max-width:1100px){.hero-q{width:460px;height:460px;right:-180px;opacity:.9}}
+@media(max-width:700px){.hero-q{width:170px;height:170px;right:-36px;top:28px;transform:none}.hero .wrap{padding-top:200px;padding-bottom:72px}}
+.domains{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);position:relative;z-index:2;background:#fff}
+.domains div{padding:28px 32px;border-right:1px solid var(--line)}
+.domains div:last-child{border-right:0}
+.domains b{display:block;font-size:17px}
+.domains span{font-size:14px;color:var(--sub)}
+@media(max-width:1000px){.domains{grid-template-columns:1fr 1fr}.domains div:nth-child(2){border-right:0}.domains div:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+@media(max-width:760px){.domains{grid-template-columns:1fr}.domains div{border-right:0;border-bottom:1px solid var(--line);padding:20px 0}}
+
+/* generic section */
+section{padding:120px 0}
+.head{display:grid;grid-template-columns:280px 1fr;gap:48px;margin-bottom:64px}
+.head .k{font-size:14px;font-weight:700;color:var(--blue);padding-top:10px}
+.head h2{font-size:clamp(28px,3.6vw,44px);line-height:1.4;font-weight:700}
+.head p{margin-top:20px;color:var(--sub);max-width:36em}
+@media(max-width:900px){.head{grid-template-columns:1fr;gap:8px}}
+
+/* positioning band */
+.band{background:var(--blue);color:#fff}
+.band .head .k{color:#BFE0FA}
+.band .head p{color:#D6E9F8}
+.venn{display:grid;grid-template-columns:1fr 1.1fr 1fr;align-items:stretch;border-top:1px solid rgba(255,255,255,.35)}
+.venn > div{padding:36px 32px 8px}
+.venn > div + div{border-left:1px solid rgba(255,255,255,.35)}
+.venn h3{font-size:22px;line-height:1.5;margin-bottom:12px}
+.venn p{font-size:15px;color:#E3F0FA}
+.venn ul{list-style:none;margin-top:20px;font-size:14px}
+.venn li{padding:8px 0;border-top:1px solid rgba(255,255,255,.22)}
+.venn .mid{background:#fff;color:var(--ink)}
+.venn .mid p{color:var(--sub)}
+.venn .mid li{border-top-color:var(--line)}
+.venn .mid h3{color:var(--red)}
+@media(max-width:900px){.venn{grid-template-columns:1fr}.venn > div + div{border-left:0;border-top:1px solid rgba(255,255,255,.35)}}
+
+/* services */
+.svc{border-top:2px solid var(--ink)}
+.svc-row{display:grid;grid-template-columns:280px 1fr 300px;gap:48px;padding:44px 0;border-bottom:1px solid var(--line)}
+.svc-row h3{font-size:24px;line-height:1.45}
+.svc-row .en{display:block;font-size:13px;color:var(--sub);font-weight:500;margin-top:6px;letter-spacing:.02em}
+.svc-row p{color:var(--ink)}
+.svc-row .out{font-size:14px;color:var(--sub)}
+.svc-row .out b{display:block;color:var(--ink);font-size:13px;margin-bottom:6px}
+@media(max-width:1000px){.svc-row{grid-template-columns:1fr;gap:14px}}
+.ai-note{margin-top:40px;background:var(--mist);padding:28px 32px;display:grid;grid-template-columns:280px 1fr;gap:48px;font-size:15px}
+.ai-note b{font-size:16px}
+@media(max-width:1000px){.ai-note{grid-template-columns:1fr;gap:8px}}
+
+/* ai */
+.ai{background:var(--ink);color:#fff}
+.ai .head .k{color:#7FC1F5}
+.ai .head p{color:#B5C0CC}
+.ai-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.loop svg{width:100%;height:auto;max-width:520px}
+.loop figcaption{font-size:13px;color:#93A0AE;margin-top:12px}
+.ai-list{border-top:1px solid #34404E}
+.ai-item{padding:24px 0;border-bottom:1px solid #34404E}
+.ai-item h3{font-size:19px;line-height:1.5;margin-bottom:8px}
+.ai-item p{font-size:15px;color:#C3CDD7}
+.ai-sub{margin-top:64px;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid #34404E}
+.ai-sub div{padding:28px 28px 0 0}
+.ai-sub div+div{padding-left:28px;border-left:1px solid #34404E}
+.ai-sub h4{font-size:16px;margin-bottom:8px;color:#fff}
+.ai-sub p{font-size:14px;color:#AEB9C5}
+.ai-sub span{font-size:13px;font-weight:700;color:#7FC1F5;margin-bottom:6px;display:block}
+@media(max-width:960px){.ai-grid{grid-template-columns:1fr;gap:40px}.ai-sub{grid-template-columns:1fr}.ai-sub div{padding-right:0}.ai-sub div+div{padding-left:0;border-left:0;border-top:1px solid #34404E;margin-top:24px}}
+
+/* ai stages */
+.stages{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #34404E;counter-reset:st}
+.stage{padding:32px 28px 8px 0;counter-increment:st}
+.stage+.stage{padding-left:28px;border-left:1px solid #34404E}
+.stage::before{content:counter(st);display:block;font-size:40px;font-weight:700;line-height:1;color:#7FC1F5;margin-bottom:18px}
+.stage h3{font-size:20px;line-height:1.45}
+.stage .q{font-size:14px;color:#7FC1F5;margin:6px 0 12px;font-weight:500}
+.stage p{font-size:14px;color:#C3CDD7}
+.stage ul{list-style:none;margin-top:16px;font-size:14px}
+.stage li{padding:8px 0;border-top:1px solid #34404E;color:#fff}
+.own{margin-top:64px;display:grid;grid-template-columns:280px 1fr;gap:48px;padding-top:32px;border-top:1px solid #34404E}
+.own b{font-size:17px}
+.own p{color:#C3CDD7;font-size:15px}
+@media(max-width:1000px){.stages{grid-template-columns:1fr 1fr}.stage:nth-child(3){padding-left:0;border-left:0}.stage:nth-child(n+3){border-top:1px solid #34404E;margin-top:16px}.own{grid-template-columns:1fr;gap:8px}}
+@media(max-width:600px){.stages{grid-template-columns:1fr}.stage,.stage+.stage{padding-left:0;border-left:0}.stage+.stage{border-top:1px solid #34404E;margin-top:16px}}
+
+/* process */
+.process{background:var(--mist)}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);counter-reset:s;border-left:1px solid var(--line)}
+.step{background:#fff;padding:28px 24px 32px;border-right:1px solid var(--line);border-top:4px solid var(--ink);counter-increment:s}
+.step::before{content:counter(s);display:block;font-size:40px;font-weight:700;line-height:1;color:var(--blue);margin-bottom:20px}
+.step h3{font-size:17px;line-height:1.5;margin-bottom:10px}
+.step p{font-size:14px;color:var(--sub);line-height:1.8}
+.step:nth-child(4),.step:nth-child(5){border-top-color:var(--red)}
+.step:nth-child(4)::before,.step:nth-child(5)::before{color:var(--red)}
+.legend{margin-top:20px;display:flex;gap:28px;font-size:13px;color:var(--sub)}
+.legend i{display:inline-block;width:18px;height:4px;vertical-align:middle;margin-right:8px}
+@media(max-width:1000px){.steps{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.steps{grid-template-columns:1fr}}
+
+/* works */
+.works{border-top:2px solid var(--ink)}
+.w{display:grid;grid-template-columns:180px 1fr 260px;gap:40px;padding:32px 0;border-bottom:1px solid var(--line);align-items:start}
+.w .ind{font-size:14px;font-weight:700;color:var(--blue)}
+.w h3{font-size:20px;line-height:1.55}
+.w p{margin-top:8px;font-size:15px;color:var(--sub)}
+.w p a{color:var(--blue)}
+.w .scope{display:flex;flex-wrap:wrap;gap:6px}
+.w .scope span{font-size:12px;font-weight:500;padding:3px 10px;border:1px solid var(--line);border-radius:2px}
+.w .scope span.b{border-color:var(--red);color:var(--red)}
+@media(max-width:900px){.w{grid-template-columns:1fr;gap:10px}}
+
+/* principles */
+.pr{display:grid;grid-template-columns:repeat(2,1fr);gap:0 64px}
+.pr div{padding:28px 0;border-top:1px solid var(--line)}
+.pr h3{font-size:19px;margin-bottom:8px}
+.pr p{color:var(--sub);font-size:15px}
+@media(max-width:800px){.pr{grid-template-columns:1fr}}
+
+/* profile */
+.profile{display:grid;grid-template-columns:220px 1fr;gap:48px;align-items:start}
+.profile figure img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%;border-radius:2px}
+.profile figcaption{font-size:12px;color:var(--sub);margin-top:8px}
+.profile .name{font-size:30px;font-weight:700;line-height:1.3}
+.profile .role{font-size:14px;color:var(--sub);margin-bottom:24px}
+.career{margin-top:32px;border-top:1px solid var(--line)}
+.career div{display:grid;grid-template-columns:80px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
+.career b{color:var(--blue)}
+.profile .links{margin-top:20px;display:flex;gap:24px;font-size:14px}
+@media(max-width:800px){.profile{grid-template-columns:1fr}.profile figure{max-width:200px}}
+
+/* media / company */
+.list{border-top:2px solid var(--ink)}
+.list a{display:grid;grid-template-columns:120px 1fr;gap:32px;padding:22px 0;border-bottom:1px solid var(--line);text-decoration:none}
+.list a:hover span:last-child{color:var(--blue);text-decoration:underline}
+.list .d{color:var(--sub);font-size:14px}
+@media(max-width:600px){.list a{grid-template-columns:1fr;gap:2px}}
+.company{width:100%;border-collapse:collapse;border-top:2px solid var(--ink)}
+.company th,.company td{text-align:left;vertical-align:top;padding:20px 0;border-bottom:1px solid var(--line);font-size:15px}
+.company th{width:200px;font-weight:700}
+@media(max-width:600px){.company th,.company td{display:block;width:auto;padding:12px 0}.company th{border-bottom:0;padding-bottom:0}}
+
+/* contact */
+.contact{background:var(--ink);color:#fff;padding:120px 0}
+.contact .inner{display:grid;grid-template-columns:1fr auto;gap:48px;align-items:end}
+.contact h2{font-size:clamp(28px,4vw,48px);line-height:1.4}
+.contact p{margin-top:20px;color:#B5C0CC;max-width:34em}
+.contact .btn{background:#fff;color:var(--ink);border-color:#fff}
+.contact .btn:hover{background:var(--red);border-color:var(--red);color:#fff}
+.contact .mail{margin-top:14px;font-size:14px;color:#B5C0CC}
+@media(max-width:800px){.contact .inner{grid-template-columns:1fr}}
+footer{background:var(--ink);color:#7E8A97;font-size:13px;border-top:1px solid #2B3644;padding:28px 0}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a href="#top" aria-label="Quriosity トップへ"><img src="logo.png" alt="Quriosity"></a>
+    <ul>
+      <li><a href="#position">強み</a></li>
+      <li><a href="#service">サービス</a></li>
+      <li><a href="#ai">AI</a></li>
+      <li><a href="#works">実績</a></li>
+      <li><a href="#company">会社概要</a></li>
+      <li><a class="cta" href="#contact">相談する</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero" style="padding:0">
+  <svg class="hero-q" viewBox="0 0 640 640" aria-hidden="true">
+    <circle cx="300" cy="300" r="220" fill="none" stroke="#F23A0C" stroke-width="96"/>
+    <path d="M430 430 L600 600" stroke="#F23A0C" stroke-width="96" stroke-linecap="square"/>
+    <circle cx="232" cy="352" r="44" fill="#16202C"/>
+  </svg>
+  <div class="wrap">
+    <h1>体験から、<br>事業をつくる。</h1>
+    <p class="lead">Quriosityは、UXデザインを軸に、新規事業の立ち上げ、サービスデザイン、AIプロダクトの開発までを手がけるデザインコンサルティングファームです。ユーザーの事実から問いを立て直し、何をつくり、何をやめるかを決めて、事業として形にするところまで伴走します。</p>
+    <div class="actions">
+      <a class="btn solid" href="#contact">プロジェクトを相談する</a>
+      <a class="btn line" href="#works">支援実績を見る</a>
+    </div>
+  </div>
+  <div class="wrap" style="padding-top:0;padding-bottom:0">
+    <div class="domains">
+      <div><b>事業開発</b><span>新規事業の構想から立ち上げ、グロースまで</span></div>
+      <div><b>サービスデザイン</b><span>顧客体験と業務・仕組みを一体で設計</span></div>
+      <div><b>UX戦略・デザイン</b><span>提供価値の再定義から要件・プロトタイプまで</span></div>
+      <div><b>AI事業・AIプロダクト</b><span>AIで変える体験の構想から、導入・定着まで</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="position" class="band">
+  <div class="wrap">
+    <div class="head">
+      <div class="k">強み</div>
+      <div>
+        <h2>デザインの深さと、事業をつくる視点を、<br>分けずに持つ。</h2>
+        <p>体験だけを磨いても事業は伸びず、事業計画だけではユーザーの実感から離れていきます。Quriosityはその間に立ち、ユーザーの事実と事業の論理を同じテーブルに載せて、つくるものを決めます。</p>
+      </div>
+    </div>
+    <div class="venn">
+      <div>
+        <h3>ユーザーの事実から始める</h3>
+        <p>何が分かれば意思決定が動くのかを先に定め、ユーザーの過去の行動から本当のニーズを捉えます。調べることが目的ではなく、決めるための材料をつくります。</p>
+        <ul><li>イシューの定義</li><li>インタビュー・ユーザビリティテスト</li><li>JTBD・ペルソナ</li></ul>
+      </div>
+      <div class="mid">
+        <h3>体験と事業をつなぐ</h3>
+        <p>顧客体験、提供価値、業務やチャネルの仕組みを一枚の設計図にまとめ、事業として成立するサービスの形に落とします。</p>
+        <ul><li>サービスデザイン・ジャーニー設計</li><li>提供価値の再定義・コンセプト</li><li>UX要件定義・プロトタイピング</li></ul>
+      </div>
+      <div>
+        <h3>事業として育てる</h3>
+        <p>大手インターネット企業でアプリ事業とUX組織を率いてきた経験をもとに、ビジネスモデル、KPI、ロードマップまで事業側の言葉で設計します。</p>
+        <ul><li>新規事業の構想・検証</li><li>ビジネスモデル・KPI設計</li><li>プロダクトマネジメント推進</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="service">
+  <div class="wrap">
+    <div class="head">
+      <div class="k">サービス</div>
+      <div>
+        <h2>課題の段階に合わせて、<br>必要なところから入ります。</h2>
+        <p>Webサイトやアプリに限らず、ハードウェアや事業全体の体験を対象にしています。</p>
+      </div>
+    </div>
+    <div class="svc">
+      <div class="svc-row">
+        <h3>事業開発<span class="en">Business Development</span></h3>
+        <p>新規事業の機会探索から、コンセプト検証、ビジネスモデル設計、立ち上げ、リリース後のグロースまで。ユーザーの事実を根拠に、事業として何に賭け、どこでやめるかを一緒に決めます。</p>
+        <div class="out"><b>主なアウトプット</b>事業コンセプト、ビジネスモデル、検証計画、MVP定義、KPI設計、ロードマップ</div>
+      </div>
+      <div class="svc-row">
+        <h3>サービスデザイン<span class="en">Service Design</span></h3>
+        <p>ユーザーの体験と、それを支える業務・システム・チャネルを一体で設計します。複数サービスの統合や、デジタルとリアルをまたぐ体験の再設計を得意としています。</p>
+        <div class="out"><b>主なアウトプット</b>カスタマージャーニー、サービスブループリント、体験コンセプト</div>
+      </div>
+      <div class="svc-row">
+        <h3>UX戦略・デザイン<span class="en">UX Strategy &amp; Design</span></h3>
+        <p>提供価値の再定義から体験コンセプト、UX要件、プロトタイピングまで。意思決定に必要なユーザー調査を自ら設計・実施し、つくるものの根拠にします。</p>
+        <div class="out"><b>主なアウトプット</b>UX戦略、UX要件定義、プロトタイプ、ユーザー調査の設計と結果</div>
+      </div>
+      <div class="svc-row">
+        <h3>AI事業・AIプロダクト<span class="en">AI Product &amp; Enablement</span></h3>
+        <p>AIで変えるべき業務と体験の見極めから、AI事業の構想、対話型AI・AIエージェントの体験設計、品質の評価と改善、現場への導入・定着までを支援します。</p>
+        <div class="out"><b>主なアウトプット</b>AI活用構想、ビジネスモデル、対話設計、評価指標、導入計画</div>
+      </div>
+      <div class="svc-row">
+        <h3>UX組織づくり・研修<span class="en">UX Enablement</span></h3>
+        <p>UXデザインを社内に根づかせたい企業に向けて、自社の課題を題材にしたワークショップ型研修や、実案件に並走するOJT型の支援を提供します。</p>
+        <div class="out"><b>主なアウトプット</b>研修プログラム、実践ワークショップ、社内向け手順書</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ai" class="ai">
+  <div class="wrap">
+    <div class="head">
+      <div class="k">AI</div>
+      <div>
+        <h2>AIで、事業と体験をつくり直す。</h2>
+        <p>AIを入れること自体を目的にはしません。どの業務、どの顧客体験をAIで変えれば事業が動くのかを見極めるところから始めて、構想、プロダクトの設計、品質づくり、現場への定着までを一貫して支援します。</p>
+      </div>
+    </div>
+    <div class="stages">
+      <div class="stage">
+        <h3>構想する</h3>
+        <div class="q">AIで何を変えれば、事業が動くか</div>
+        <p>業務と顧客体験を見渡し、AIが効く場所と効かない場所を切り分けます。AIが仕事の一部を担うとき、誰が何に対価を払うのかまで含めて事業の形を描きます。</p>
+        <ul><li>AI活用の機会探索</li><li>AI新規事業の構想</li><li>人＋AIのビジネスモデル</li></ul>
+      </div>
+      <div class="stage">
+        <h3>体験を設計する</h3>
+        <div class="q">使われ、信頼されるAIをどうつくるか</div>
+        <p>対話型AIやAIエージェントで、ユーザーの言葉になっていない希望を引き出す会話の流れや、AIに任せる範囲と人に戻す場面を設計します。</p>
+        <ul><li>対話・ヒアリング設計</li><li>AIと人の役割分担</li><li>AIプロダクトのUX要件</li></ul>
+      </div>
+      <div class="stage">
+        <h3>品質をつくる</h3>
+        <div class="q">「良いAI」をどう測り、どう直すか</div>
+        <p>正解表のないAIの品質を、事業の成果につながる評価軸で定義。AIによるユーザビリティテストや、改善を回し続ける運用の仕組みまでつくります。</p>
+        <ul><li>評価指標の設計</li><li>AIによるユーザビリティテスト</li><li>継続改善の運用設計</li></ul>
+      </div>
+      <div class="stage">
+        <h3>現場に根づかせる</h3>
+        <div class="q">導入したAIを、どう使われ続けるものにするか</div>
+        <p>現場の業務と既存システムを観察し、AIエージェントを業務に組み込む設計から、社内の推進体制づくりや研修までを支援します。</p>
+        <ul><li>AIエージェントの業務導入</li><li>社内のAI活用推進</li><li>AI時代のUX研修</li></ul>
+      </div>
+    </div>
+    <div class="own">
+      <b>私たち自身も、AIを前提に働いています</b>
+      <p>調査・分析、資料づくり、プロトタイピングまで、日々の仕事をAIと組み合わせて進めています。少人数でも、検証の回数と速さを落とさない。その実践で得た手触りを、そのままご支援に持ち込みます。</p>
+    </div>
+  </div>
+</section>
+
+<section id="process" class="process">
+  <div class="wrap">
+    <div class="head">
+      <div class="k">進め方</div>
+      <div>
+        <h2>問いを決めてから、つくる。</h2>
+        <p>最初に「何を決めるための取り組みか」と「何が出たらどう判断するか」を固めます。だから、途中で議論がぶれず、つくったものが事業の判断に使われます。</p>
+      </div>
+    </div>
+    <div class="steps">
+      <div class="step"><h3>イシューを定義する</h3><p>誰の、どんな意思決定を動かすための取り組みなのかを言葉にします。</p></div>
+      <div class="step"><h3>判断基準を決める</h3><p>仮説と「何が出たらGOとするか」を、検証の前に決めておきます。</p></div>
+      <div class="step"><h3>ユーザーの事実を集める</h3><p>意向ではなく過去の行動を見て、定性と定量を往復して確かめます。</p></div>
+      <div class="step"><h3>価値と事業を設計する</h3><p>事実を根拠に提供価値を定義し直し、サービスと事業の形に落とします。</p></div>
+      <div class="step"><h3>検証し、実装する</h3><p>プロトタイプで素早く確かめ、要件・KPI・ロードマップとして実装につなげます。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="works">
+  <div class="wrap">
+    <div class="head">
+      <div class="k">実績</div>
+      <div>
+        <h2>主な支援実績</h2>
+        <p>守秘義務のため、業界と支援内容のみを掲載しています。</p>
+      </div>
+    </div>
+    <div class="works">
+      <div class="w">
+        <div class="ind">自動車</div>
+        <div><h3>自動車メーカーの新規事業立ち上げ</h3><p>自動車メーカーの新規事業を、事業コンセプトの設計からサービスのリリースまで支援。</p></div>
+        <div class="scope"><span class="b">事業開発</span><span class="b">コンセプト設計</span><span>UX戦略</span></div>
+      </div>
+      <div class="w">
+        <div class="ind">不動産</div>
+        <div><h3>不動産検索AIの体験設計と品質改善</h3><p>会話で物件探しを手伝う不動産検索AIで、ヒアリングの流れ、評価指標、AIによるユーザビリティテスト、改善を回し続ける運用の仕組みを設計。改善案の本番投入まで到達。</p></div>
+        <div class="scope"><span class="b">AIプロダクト</span><span>評価設計</span><span>AI UT</span></div>
+      </div>
+      <div class="w">
+        <div class="ind">不動産</div>
+        <div><h3>仲介会社向け「人＋AI」の新事業モデル設計</h3><p>事業者向けの新領域で、人とAIが物件選定から来店機会の創出までを担う成果連動型モデルを提案。成立条件・検証の順番・撤退条件まで設計。</p></div>
+        <div class="scope"><span class="b">事業開発</span><span class="b">ビジネスモデル</span></div>
+      </div>
+      <div class="w">
+        <div class="ind">金融・決済</div>
+        <div><h3>決済サービス群のアプリ統合</h3><p>複数の金融サービスを一つのアプリに統合するプロジェクトで、ユーザーの利用モードを整理し、提供価値の再定義からUX要件の具体化までを担当。</p></div>
+        <div class="scope"><span class="b">サービスデザイン</span><span>UX戦略</span><span>UX要件定義</span></div>
+      </div>
+      <div class="w">
+        <div class="ind">メディカル</div>
+        <div><h3>医療グループの顧客理解とペルソナAI</h3><p>医療サービス領域で、顧客の意思決定プロセスを捉える調査を継続実施。そこから作ったペルソナをAI化し、広告案を当てて改善するサイクルにつなげています。</p></div>
+        <div class="scope"><span>UX戦略</span><span class="b">ペルソナAI</span><span>継続支援</span></div>
+      </div>
+      <div class="w">
+        <div class="ind">教育・研修</div>
+        <div><h3>大手企業グループ向けUXデザイン研修</h3><p>グループ各社の社員を対象に、自社の課題を題材とするワークショップ型の研修を設計・実施。</p></div>
+        <div class="scope"><span>研修設計</span><span>講師</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process" style="padding-top:104px;padding-bottom:104px">
+  <div class="wrap">
+    <div class="head">
+      <div class="k">考え方</div>
+      <div><h2>Question × Curiosity</h2><p>社名は、Question（疑問）とCuriosity（好奇心）を掛け合わせた造語です。最初に疑うのは、問いの立て方そのものです。</p></div>
+    </div>
+    <div class="pr">
+      <div><h3>イシューが先、手法は後</h3><p>デザインも調査もAIも、意思決定を動かす問いに答えるための手段として選びます。</p></div>
+      <div><h3>判断の基準を、先に決める</h3><p>結果を見てから都合のよい解釈をしないための約束です。</p></div>
+      <div><h3>言葉より、行動を見る</h3><p>「使いたいですか」という意向より、過去の行動とそのときの状況を信じます。</p></div>
+      <div><h3>事実は潔癖に、構想は大胆に</h3><p>根拠をたどれる事実を積み上げたうえで、コンセプトでは一段上の仮説へ踏み込みます。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="profile">
+  <div class="wrap">
+    <div class="head">
+      <div class="k">代表</div>
+      <div><h2>事業とUXの両方の責任者を<br>務めてきた代表が、直接入ります。</h2></div>
+    </div>
+    <div class="profile">
+      <figure><img src="oka.jpg" alt="代表取締役 岡 昌樹" loading="lazy" width="480" height="600"></figure>
+      <div>
+        <div class="name">岡 昌樹</div>
+        <div class="role">代表取締役</div>
+        <p>モバイルコンテンツプロバイダーのエンジニアとしてキャリアを始め、Yahoo! JAPANではトップページのアプリ責任者や全社のモバイル戦略を担当してスマホシフトを推進。KDDIではUX戦略を担い、全社アプリの利用者数を2年半で4倍に伸ばしました。mediba CXOとしてメディア・コンテンツのCX/UXを統括したのち、2021年にQuriosityを設立。新規事業やAIプロダクトの立ち上げに携わりながら、企業研修や外部講座の講師としてUXデザインも教えています。</p>
+        <div class="career">
+          <div><b>2008</b><span>Yahoo! JAPAN　トップページのアプリ責任者、全社モバイル戦略</span></div>
+          <div><b>2016</b><span>KDDI バリュー事業本部 担当部長　UX戦略</span></div>
+          <div><b>2018</b><span>mediba CXO（Chief eXperience Officer）</span></div>
+          <div><b>2020</b><span>メンバーズ ポップインサイトカンパニー CX/UXストラテジスト</span></div>
+          <div><b>2021</b><span>株式会社Quriosity 設立、代表取締役</span></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/masaki.oka.10" target="_blank" rel="noopener">Facebook</a><a href="https://twitter.com/okamasakidayo" target="_blank" rel="noopener">X</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="media" style="padding-top:0">
+  <div class="wrap">
+    <div class="head"><div class="k">掲載</div><div><h2>メディア掲載</h2></div></div>
+    <div class="list">
+      <a href="https://unii-research.lifull.net/business/case/quriosity/" target="_blank" rel="noopener"><span class="d">2022年4月</span><span>uniiリサーチ 導入事例インタビュー</span></a>
+      <a href="https://lp.zerone.cc/posts/interview_quriosity" target="_blank" rel="noopener"><span class="d">2021年12月</span><span>ZERONE インタビュー</span></a>
+      <a href="https://markelabo.com/n/n6b1cd946d450" target="_blank" rel="noopener"><span class="d">2021年10月</span><span>アプリマーケティング研究所　オーテ株式会社様のコンサルティング事例</span></a>
+    </div>
+  </div>
+</section>
+
+<section id="company" style="padding-top:0">
+  <div class="wrap">
+    <div class="head"><div class="k">会社概要</div><div><h2>株式会社Quriosity</h2></div></div>
+    <table class="company">
+      <tr><th>会社名</th><td>株式会社Quriosity（キュリオシティ）</td></tr>
+      <tr><th>設立</th><td>2021年10月4日</td></tr>
+      <tr><th>代表取締役</th><td>岡 昌樹</td></tr>
+      <tr><th>所在地</th><td>〒160-0022 東京都新宿区新宿5丁目18番20号 ルックハイツ新宿803号</td></tr>
+      <tr><th>事業内容</th><td>事業開発支援、サービスデザイン、UX戦略・デザイン、AIプロダクトの体験設計・AI導入支援、UX組織づくり・人材育成</td></tr>
+    </table>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap inner">
+    <div>
+      <h2>まだ問いの形になっていない<br>段階から、ご相談ください。</h2>
+      <p>「新規事業の検証の進め方を決めたい」「AIを事業にどう活かすかを決めたい」「つくったものが使われる理由を設計したい」といったご相談を歓迎しています。</p>
+    </div>
+    <div>
+      <a class="btn" href="https://forms.gle/j9PjJ91Lo7wdGehK6" target="_blank" rel="noopener">お問い合わせフォーム</a>
+      <div class="mail">oka@quriosity.biz</div>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer><div class="wrap"><span>© 2021–2026 Quriosity Inc.</span><span>株式会社Quriosity</span></div></footer>
+</body>
+</html>
